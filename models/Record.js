@@ -1,5 +1,5 @@
 // models/Record.js
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const recordSchema = new mongoose.Schema({
   name: {
@@ -27,9 +27,11 @@ const recordSchema = new mongoose.Schema({
     default: 'Unknown'
   }
 }, {
-  collection: 'records', // 指定 MongoDB 集合名
-  timestamps: false      // 不自动加 createdAt/updatedAt
+  collection: 'records',
+  timestamps: false
 });
 
-// 防止重复注册模型（重要！）
-module.exports = mongoose.models.Record || mongoose.model('Record', recordSchema);
+// 防止重复注册模型（ESM 写法）
+const Record = mongoose.models.Record || mongoose.model('Record', recordSchema);
+
+export default Record;
