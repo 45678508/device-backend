@@ -1,31 +1,18 @@
 {
   "name": "device-backend",
   "version": "1.0.0",
-  "type": "module",     "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
-    "mongoose": "^7.8.8",
-    "next": "^14.2.35",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
   },
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/45678508/device-backend.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/45678508/device-backend/issues"
-  },
-  "homepage": "https://github.com/45678508/device-backend#readme"
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
 }
